@@ -1,6 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Mikhail Stepanov`,
+    author: {
+      name: `Mikhail Stepanov`,
+    },
     description: `Personal site by Mikhail Stepanov`,
     siteUrl: `https://mikhail-stepanov.com`,
   },
@@ -40,6 +43,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Personal blog by Mikhail Stepanov`,
+        short_name: `Mikhail Stepanov`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
