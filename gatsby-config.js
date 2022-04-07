@@ -43,7 +43,6 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Personal blog by Mikhail Stepanov`,
-        short_name: `Mikhail Stepanov`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
