@@ -5,8 +5,8 @@ const Header = ({location, title, children}) => {
     return (
         <nav className="navigation">
             <section className="container">
-                <Link className="navigation-title font-bold text-gray-900" to="/" activeStyle={{boxShadow: 'none'}}>Pavel
-                    Gordon</Link>
+                <Link className="navigation-title font-bold text-gray-900" to="/" activeStyle={{boxShadow: 'none'}}>Mikhail
+                    Stepanov</Link>
                 <input type="checkbox" id="menu-toggle"/>
                 <label className="menu-button float-right" htmlFor="menu-toggle"><i className="fas fa-bars"></i></label>
                 <ul className="navigation-list">
