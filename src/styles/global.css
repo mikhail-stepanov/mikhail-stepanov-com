@@ -539,7 +539,7 @@ img {
 
 @media only screen and (max-width:768px) {
 	.navigation #menu-toggle:checked+label {
-		color: #e0e0e0
+		color: #000000;
 	}
 	.navigation #menu-toggle:checked+label+ul {
 		visibility: visible;
