@@ -4,7 +4,7 @@ const Footer = ({location, title, children}) => {
     return (
         <footer className="footer">
             <h2 className="container">
-                {new Date().getFullYear()}
+                Worldwide. {new Date().getFullYear()}
             </h2>
         </footer>
     )
