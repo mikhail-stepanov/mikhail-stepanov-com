@@ -355,7 +355,7 @@ img {
 
 .list ul li .title:hover,
 .list ul li .title:focus {
-	color: #1565c0
+	color: #6dcda8
 }
 
 .centered {
@@ -406,7 +406,7 @@ img {
 
 .centered .about ul li a:hover,
 .centered .about ul li a:focus {
-	color: #1565c0
+	color: #6dcda8
 }
 
 @media only screen and (max-width:768px) {
@@ -464,7 +464,7 @@ img {
 
 .navigation a:hover,
 .navigation a:focus {
-	color: #1565c0
+	color: #6dcda8
 }
 
 .navigation .navigation-title {
@@ -560,7 +560,7 @@ img {
 	}
 	.navigation .menu-button:hover,
 	.navigation .menu-button:focus {
-		color: #1565c0
+		color: #6dcda8
 	}
 }
 
@@ -600,5 +600,5 @@ img {
 }
 
 .footer a {
-	color: #1565c0
+	color: #6dcda8
 }

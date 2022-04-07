@@ -1,9 +1,6 @@
 module.exports = {
   siteMetadata: {
     title: `Mikhail Stepanov`,
-    author: {
-      name: `Mikhail Stepanov`,
-    },
     description: `Personal site by Mikhail Stepanov`,
     siteUrl: `https://mikhail-stepanov.com`,
   },
