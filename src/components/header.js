@@ -8,7 +8,6 @@ const Header = ({location, title, children}) => {
                 <Link className="navigation-title font-bold text-gray-900" to="/" activeStyle={{boxShadow: 'none'}}>Mikhail
                     Stepanov</Link>
                 <input type="checkbox" id="menu-toggle"/>
-                <label className="menu-button float-right" htmlFor="menu-toggle"><i className="fas fa-bars"></i></label>
                 <ul className="navigation-list">
                     <li className="navigation-item">
                         <Link className="navigation-link" to="/about" activestyle={{boxShadow: 'none'}}>About me</Link>
