@@ -7,7 +7,6 @@ const Header = ({location, title, children}) => {
             <section className="container">
                 <Link className="navigation-title font-bold text-gray-900" to="/" activeStyle={{boxShadow: 'none'}}>Mikhail
                     Stepanov</Link>
-                <input type="checkbox" id="menu-toggle"/>
                 <ul className="navigation-list">
                     <li className="navigation-item">
                         <Link className="navigation-link" to="/about" activestyle={{boxShadow: 'none'}}>About me</Link>
