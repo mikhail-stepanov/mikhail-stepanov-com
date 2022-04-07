@@ -3,9 +3,9 @@ import React from "react"
 const Footer = ({location, title, children}) => {
     return (
         <footer className="footer">
-            <section className="container">
+            <h2 className="container">
                 {new Date().getFullYear()}
-            </section>
+            </h2>
         </footer>
     )
 }
