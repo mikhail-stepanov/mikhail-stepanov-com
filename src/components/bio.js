@@ -30,7 +30,7 @@ const Bio = () => {
                         </a>
                     </li>
                     <li>
-                        <a href="https://instagram.com/go_on_maggot_brain/" aria-label="Instagram"
+                        <a href="https://www.linkedin.com/in/mikhail-stepanovv/" aria-label="LinkedIn"
                            style={{boxShadow: 'none'}}>
                             <FontAwesomeIcon icon={faLinkedin} size="2x"/>
                         </a>
