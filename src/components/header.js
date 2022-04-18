@@ -15,7 +15,7 @@ const Header = ({location, title, children}) => {
                         <a href="https://github.com/mikhail-stepanov" activestyle={{boxShadow: 'none'}}>Projects</a>
                     </li>
                     <li className="navigation-item">
-                        <a href="/mikhail-stepanov-resume.pdf" activestyle={{boxShadow: 'none'}}>CV</a>
+                        <a href="/resume.pdf" activestyle={{boxShadow: 'none'}}>CV</a>
                     </li>
                 </ul>
             </section>
