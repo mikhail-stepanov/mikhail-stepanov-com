@@ -1,7 +1,7 @@
 import React from "react"
 
 import "./bio.css"
-import avatar from '../../content/assets/avatar.png'
+import avatar from '../../content/assets/avatar.jpg'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {
     faGithub,
