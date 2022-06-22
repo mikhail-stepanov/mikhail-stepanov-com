@@ -9,7 +9,7 @@ const About = ({ location, title, children }) => {
             <section className='container page'>
                 <h1>About me</h1>
                 <p>
-                    Hi! My name is Mikhail Stepanov. I am a backend (Java) software engineer with 4+ years of professional experience and passion for clean and performant code. I build distributed, robust and fault tolerant services for businesses. <br />
+                    Hi! My name is Mikhail Stepanov. I am a backend (Java) software engineer with 5 years of professional experience and passion for clean and performant code. I build distributed, robust and fault tolerant services for businesses. <br />
                 </p>
                 <p>
                     Born in Russia, I lived in Germany but currently - Russia. I contributed to <a href="https://www.aligntech.com/">Align Technology inc.</a>, <a href="https://dasreda.ru//">Business Environment (SberBank)</a>, <a href="https://www.docrobot.ru/">E-COM</a> and <a href="https://www.vtb.ru/n">VTB</a>.
