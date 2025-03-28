@@ -21,7 +21,7 @@ const Bio = () => {
                 }}/>
 
                 <h1 className="name">Mikhail Stepanov</h1>
-                <h2 className="position">Sr. Software Engineer</h2>
+                <h2 className="position">Tech Lead / Sr. Software Engineer</h2>
 
                 <ul>
                     <li>
