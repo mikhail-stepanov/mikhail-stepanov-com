@@ -21,7 +21,7 @@ const About = ({ location, title, children }) => {
                     I always push myself to be a better lead, architect and developer and stay up to date with the latest technology trends. I'm also interested in ML and some portion of frontend and mobile development. You can check my resume here – <a href="https://mikhail-stepanov.com/resume.pdf">CV</a>. <br />
                 </p>
                 <p>
-                    In my free time I'm dog walker, amateur musician, traveler and climber. Gotta be yacht captain soon..
+                    In my free time I'm dog walker, amateur musician, traveler and climber. Gotta be yacht captain soon.
                     <br />
                 </p>
             </section>
