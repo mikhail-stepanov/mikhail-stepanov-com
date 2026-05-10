@@ -4,7 +4,7 @@ module.exports = {
     author: {
       name: `Mikhail Stepanov`,
     },
-    description: `Personal site by Mikhail Stepanov`,
+    description: `Mikhail Stepanov — Head of Backend at SberEducation, PhD candidate at HSE. 9+ years of distributed systems on the JVM, plus frontend, Flutter and applied ML.`,
     siteUrl: `https://mikhail-stepanov.com`,
   },
   plugins: [
@@ -70,8 +70,8 @@ module.exports = {
         name: `Personal blog by Mikhail Stepanov`,
         short_name: `Mikhail Stepanov`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#f4f1ea`,
+        theme_color: `#f4f1ea`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,
       },

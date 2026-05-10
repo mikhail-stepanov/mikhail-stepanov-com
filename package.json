@@ -57,6 +57,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "build:cv": "\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --no-sandbox --no-pdf-header-footer --force-prefers-reduced-motion --print-to-pdf=./static/resume.pdf http://localhost:8000/cv/",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }
