@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Mikhail Stepanov — CV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream: #f4f1ea;
+    --cream-2: #ece7dc;
+    --ink: #1a1715;
+    --ink-2: #4a4540;
+    --ink-3: #7a7269;
+    --line: rgba(26,23,21,0.10);
+    --glass: rgba(255,253,247,0.55);
+    --glass-2: rgba(255,253,247,0.38);
+    --glow-warm: #f6c6a1;
+    --glow-sky:  #b6c8e8;
+    --glow-sage: #c2d4be;
+    --glow-rose: #e9b9c1;
+  }
+
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family: 'Onest', -apple-system, system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "ss02";
+    font-size: 10pt;
+    line-height: 1.42;
+  }
+
+  /* === PAGE FRAME ============================================ */
+  .page{
+    width: 210mm;
+    height: 297mm;
+    margin: 24px auto;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    box-shadow: 0 30px 80px -30px rgba(60,40,20,0.25), 0 6px 20px -8px rgba(60,40,20,0.10);
+    border-radius: 6px;
+    isolation: isolate;
+  }
+
+  /* Atmospheric color underlayer — gradient orbs, soft and saturated */
+  .orbs{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .orb{
+    position:absolute; border-radius:50%;
+    filter: blur(60px);
+    opacity:0.78;
+    mix-blend-mode: normal;
+  }
+  .orb.a{ width:380px; height:380px; left:-110px; top:-90px;  background: radial-gradient(closest-side, var(--glow-warm), transparent 70%); }
+  .orb.b{ width:460px; height:460px; right:-150px; top: 120px; background: radial-gradient(closest-side, var(--glow-sky),  transparent 70%); opacity:.62;}
+  .orb.c{ width:420px; height:420px; left: 30%;   bottom:-180px; background: radial-gradient(closest-side, var(--glow-sage), transparent 70%); opacity:.55;}
+  .orb.d{ width:300px; height:300px; left:-80px; bottom: 200px; background: radial-gradient(closest-side, var(--glow-rose), transparent 70%); opacity:.45;}
+  .orb.e{ width:340px; height:340px; right:-60px; bottom:-120px; background: radial-gradient(closest-side, var(--glow-warm), transparent 70%); opacity:.55;}
+
+  /* Subtle film grain to anchor the glass */
+  .grain{
+    position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.5;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+  }
+
+  .content{
+    position:relative; z-index:2;
+    padding: 11mm 13mm 10mm;
+    height: 100%;
+    display:flex; flex-direction:column; gap: 4.5mm;
+  }
+
+  /* === GLASS PANEL =========================================== */
+  .glass{
+    position: relative;
+    background: var(--glass);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 18px;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.85),
+      inset 0 -1px 0 rgba(255,255,255,0.18),
+      0 1px 2px rgba(80,60,40,0.06),
+      0 12px 30px -18px rgba(80,60,40,0.18);
+  }
+  .glass::before{
+    content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0) 35%);
+  }
+  .glass::after{
+    content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
+  }
+
+  /* === HERO =================================================== */
+  .hero{ padding: 7mm 9mm 7mm; display:grid; grid-template-columns: 32mm 1fr auto; gap: 6mm; align-items:center; }
+  .portrait{
+    width: 32mm; height: 32mm;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.85),
+      inset 0 0 0 1px rgba(255,255,255,0.4),
+      0 1px 2px rgba(80,60,40,0.08),
+      0 8px 24px -10px rgba(80,60,40,0.25);
+    background: rgba(255,253,247,0.5);
+    align-self: end;
+  }
+  .portrait img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 68% 22%;
+    display: block;
+  }
+  .portrait::after{
+    content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+    background: linear-gradient(180deg, rgba(255,255,255,0.32), rgba(255,255,255,0) 40%);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.5);
+  }
+  .eyebrow{
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 8.4pt; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .name{
+    font-weight: 400;
+    margin: 6px 0 16px;
+    display:flex; flex-direction:column;
+  }
+  .name .n1{
+    font-family: 'Onest', sans-serif;
+    font-weight: 600;
+    font-size: 34pt; letter-spacing: -0.025em;
+    line-height: 1;
+  }
+  .name .n2{
+    font-family: 'Onest', sans-serif;
+    font-weight: 600;
+    font-size: 34pt; letter-spacing: -0.025em;
+    color: #6a4a3a;
+    line-height: 1.05;
+  }
+  .role{
+    font-size: 11.5pt;
+    color: var(--ink-2);
+    max-width: 90mm;
+    text-wrap: pretty;
+  }
+  .role b{ color: var(--ink); font-weight: 500; }
+
+  .contacts{
+    display:flex; flex-direction:column; gap: 4px;
+    font-family: 'Onest', sans-serif; font-weight: 400;
+    font-size: 8.4pt;
+    color: var(--ink-2);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .contacts a{ color: inherit; text-decoration: none; }
+  .contacts .pin{ color: var(--ink-3); }
+
+  /* === SUMMARY ================================================ */
+  .summary{
+    padding: 5mm 9mm;
+    font-size: 9.6pt;
+    line-height: 1.5;
+    color: var(--ink-2);
+    text-wrap: pretty;
+  }
+  .summary b{ color: var(--ink); font-weight: 500; }
+
+  /* === SECTION =============================================== */
+  .section{ display:flex; flex-direction:column; gap: 4mm; }
+  .section-head{
+    display:flex; align-items: baseline; gap: 10px;
+    padding: 0 2mm;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  .section-head h2{
+    font-family: 'Onest', sans-serif;
+    font-weight: 600;
+    font-size: 16pt;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+  .section-head .num{
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 8pt;
+    color: var(--ink-3);
+    letter-spacing: 0.12em;
+  }
+  .section-head .rule{
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--line), transparent);
+    transform: translateY(-3px);
+  }
+
+  /* === EXPERIENCE LIST ======================================= */
+  .xp{ display:flex; flex-direction:column; gap: 2.5mm; }
+  .job{
+    padding: 4mm 7mm 4mm;
+    display:grid;
+    grid-template-columns: 24mm 1fr;
+    gap: 4mm;
+  }
+  .job .when{
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 8pt;
+    color: var(--ink-3);
+    line-height: 1.4;
+    padding-top: 3px;
+  }
+  .job .when .now{
+    display:inline-block;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 1px 6px;
+    border-radius: 999px;
+    font-size: 7.4pt;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .job .body h3{
+    margin: 0 0 1px;
+    font-size: 11.2pt;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .job .body .meta{
+    font-size: 9.2pt;
+    color: var(--ink-2);
+    margin-bottom: 4px;
+  }
+  .job .body .meta .dot{ color: var(--ink-3); margin: 0 6px; }
+  .job ul{
+    margin: 4px 0 0;
+    padding: 0;
+    list-style: none;
+    display:flex; flex-direction:column; gap: 2px;
+  }
+  .job li{
+    position: relative;
+    padding-left: 12px;
+    font-size: 9.2pt;
+    line-height: 1.4;
+    color: var(--ink-2);
+    text-wrap: pretty;
+  }
+  .job li::before{
+    content: "";
+    position:absolute; left:0; top: 0.55em;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--ink-3);
+  }
+  .job .stack{
+    margin-top: 5px;
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 8pt;
+    color: var(--ink-3);
+    letter-spacing: 0.02em;
+  }
+
+  /* === GRID for skills/edu/lang ============================== */
+  .grid{
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5mm;
+  }
+  .card{ padding: 4mm 5.5mm; }
+  .card h3{
+    margin: 0 0 2.5mm;
+    font-family: 'Onest', sans-serif;
+    font-weight: 600;
+    font-size: 12pt;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .skills{ display:flex; flex-direction:column; gap: 1.4mm; }
+  .skill-row{ display:flex; flex-direction:column; gap: 2px; }
+  .skill-row .label{
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 7pt; letter-spacing: 0.12em; text-transform:uppercase;
+    color: var(--ink-3);
+  }
+  .chips{ display:flex; flex-wrap:wrap; gap: 4px; }
+  .chip{
+    font-size: 7.8pt;
+    color: var(--ink);
+    padding: 1.5px 7px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 1px 1px rgba(80,60,40,0.04);
+    backdrop-filter: blur(6px);
+    white-space: nowrap;
+  }
+  .chip.ink{ background: var(--ink); color: var(--cream); border-color: var(--ink); box-shadow: none; }
+
+  .lang-list, .edu-list, .cert-list{
+    display:flex; flex-direction:column; gap: 1.6mm;
+  }
+  .lang{
+    display:flex; justify-content:space-between; align-items:baseline;
+    border-bottom: 1px dashed var(--line);
+    padding-bottom: 2mm;
+  }
+  .lang:last-child{ border-bottom: none; padding-bottom: 0; }
+  .lang .name-l{ font-size: 10pt; color: var(--ink); }
+  .lang .lvl{
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 7.8pt; color: var(--ink-3); letter-spacing: 0.06em;
+  }
+
+  .edu{
+    display:flex; flex-direction:column; gap: 0px;
+    padding-bottom: 1.6mm;
+    border-bottom: 1px dashed var(--line);
+  }
+  .edu:last-child{ border-bottom:none; padding-bottom: 0; }
+  .edu .deg{ font-size: 9.4pt; color: var(--ink); font-weight: 500; }
+  .edu .deg em{ font-style: normal; font-weight: 400; color: var(--ink-2); }
+  .edu .school{
+    font-size: 8.4pt; color: var(--ink-2);
+  }
+  .edu .yr{
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 7.6pt; color: var(--ink-3); letter-spacing: 0.06em;
+  }
+
+  .cert{ font-size: 8.8pt; color: var(--ink-2); display:flex; gap: 8px; align-items:baseline;}
+  .cert::before{
+    content:""; width:5px; height:5px; border-radius:50%;
+    background: linear-gradient(135deg, var(--glow-warm), var(--glow-rose));
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.6);
+    flex-shrink:0; transform: translateY(-2px);
+  }
+
+  /* footer page label */
+  .pagelabel{
+    position:absolute; right: 14mm; bottom: 8mm;
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 7.6pt; color: var(--ink-3); letter-spacing: 0.12em;
+    z-index: 3;
+  }
+  .siglabel{
+    position:absolute; left: 14mm; bottom: 8mm;
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 7.6pt; color: var(--ink-3); letter-spacing: 0.12em;
+    z-index: 3;
+  }
+
+  /* small helpers */
+  .row2{ display:grid; grid-template-columns: 1fr 1fr; gap: 3.5mm; }
+  .pill{
+    display:inline-flex; align-items:center; gap:6px;
+    padding: 3px 10px;
+    font-family: 'Onest', sans-serif; font-weight: 500;
+    font-size: 7.8pt; letter-spacing: 0.12em; text-transform:uppercase;
+    color: var(--ink-2);
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+  }
+  .pill .dotlive{ width:6px; height:6px; border-radius:50%; background:#3a8a55; box-shadow:0 0 0 3px rgba(58,138,85,0.18); }
+
+  /* === PRINT ================================================ */
+  @page{
+    size: A4;
+    margin: 0;
+  }
+  @media print{
+    html, body{ background: var(--cream); }
+    body{ font-size: 10.2pt; }
+    .page{
+      width: 210mm; height: 297mm;
+      margin: 0; box-shadow: none; border-radius: 0;
+      page-break-after: always;
+      break-after: page;
+    }
+    .page:last-child{ page-break-after: auto; break-after: auto; }
+    *{ -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== PAGE 1 ============== -->
+<section class="page" data-screen-label="01 CV — page 1">
+  <div class="orbs">
+    <div class="orb a"></div>
+    <div class="orb b"></div>
+    <div class="orb c"></div>
+    <div class="orb d"></div>
+  </div>
+  <div class="grain"></div>
+
+  <div class="content">
+
+    <!-- HERO -->
+    <header class="glass hero">
+      <div class="portrait"><img src="assets/kabina.jpeg" alt="Mikhail Stepanov" /></div>
+      <div>
+        <div class="eyebrow">Curriculum Vitae · 2026</div>
+        <h1 class="name"><span class="n1">Mikhail</span><span class="n2">Stepanov</span></h1>
+        <p class="role"><b>Head of Backend</b> at SberEducation. PhD candidate at HSE. Backend engineering leader with 9+ years on the JVM, plus frontend, Flutter and applied ML.</p>
+        <div style="margin-top:8px;">
+          <span class="pill">OPEN TO CONERSATIONS</span>
+        </div>
+      </div>
+      <div class="contacts">
+        <span class="pin">▢ Moscow · Worldwide</span>
+        <a href="mailto:the.mikhail.stepanov@gmail.com">the.mikhail.stepanov@gmail.com</a>
+        <a href="https://mikhail-stepanov.com">mikhail-stepanov.com</a>
+        <a href="https://linkedin.com/in/mikhail-stepanovv">in/mikhail-stepanovv</a>
+        <a href="https://github.com/mikhail-stepanov">github.com/mikhail-stepanov</a>
+        <a href="https://t.me/go_on_maggot_brain">t.me/go_on_maggot_brain</a>
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <div class="glass summary">I design software architecture driven by business needs and build distributed, robust, fault-tolerant services on the JVM (Java / Kotlin). Today my focus is on the management side — leading and growing engineering teams, hiring, and shaping technical strategy, while staying close to the code. Beyond backend I work across frontend, mobile (Dart / Flutter) and increasingly ML and applied AI, which has been especially useful in founding-engineer roles where the job is to ship the whole product, not one slice of it.</div>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>Experience</h2>
+        <span class="rule"></span>
+        <span class="num">9+ years</span>
+      </div>
+
+      <div class="xp">
+
+        <article class="glass job">
+          <div class="when">
+            <span class="now">NOW</span>
+            Sep 2025<br/>— present
+          </div>
+          <div class="body">
+            <h3>Head of Backend · SberEducation</h3>
+            <div class="meta">Full-time<span class="dot">·</span>Moscow</div>
+            <ul>
+              <li>Lead and manage the backend team — hiring, growth, organizational structure.</li>
+              <li>Design system architecture and develop internal platform solutions.</li>
+              <li>Define technology choices and shape the technical strategy across the org.</li>
+              <li>Implement and promote best engineering practices; ensure code quality, service stability and performance.</li>
+              <li>Collaborate closely with the CTO, other heads of departments, and product teams.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="glass job">
+          <div class="when">
+            Nov 2020<br/>— Oct 2025<br/><span style="opacity:.7;">5 years</span>
+          </div>
+          <div class="body">
+            <h3>Senior Software Engineer · Align Technology</h3>
+            <div class="meta">Full-time<span class="dot">·</span>Yerevan / Moscow</div>
+            <ul>
+              <li>Designed and developed backend systems for customer-facing applications — patient-care services and clinical-treatment APIs.</li>
+              <li>Broke a monolith into a distributed system; designed architecture against business need and resource constraints.</li>
+              <li>Improved cross-functional processes: contract-first APIs, code-scanner pipelines, automated test generation.</li>
+              <li>Acted as scrum-master, hired teammates, ran sprint reviews, OKRs and 30-60-90 plans.</li>
+            </ul>
+            <div class="stack">Java · Spring · PostgreSQL · Redis · Kafka · RabbitMQ · Docker · k8s · AWS · Heroku</div>
+          </div>
+        </article>
+
+        <article class="glass job">
+          <div class="when">
+            Jun 2024<br/>— Aug 2025<br/><span style="opacity:.7;">1 yr 3 mo</span>
+          </div>
+          <div class="body">
+            <h3>Founding Engineer · Tech Lead · Oneum <span style="font-weight:400; color:var(--ink-3); font-size:9.4pt;">· co-founder</span></h3>
+            <div class="meta">Co-founder<span class="dot">·</span>Remote</div>
+            <ul>
+              <li>Designed the solution from a tech standpoint based on DDD; built the design model, hired the team.</li>
+              <li>Led development across backend, ML and frontend — chat-bot on top of OpenAI LLMs with messengers and CRM integrations.</li>
+              <li>Successfully launched <b>Oneum.io</b>, a production startup — operating as CTO and co-founder.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </div>
+  <div class="siglabel">M.S. · 2026</div>
+  <div class="pagelabel">01 / 02</div>
+</section>
+
+
+<!-- ============== PAGE 2 ============== -->
+<section class="page" data-screen-label="02 CV — page 2">
+  <div class="orbs">
+    <div class="orb b" style="left:-160px; top:-120px; right:auto;"></div>
+    <div class="orb a" style="right:-100px; top: 60px; left:auto;"></div>
+    <div class="orb e"></div>
+    <div class="orb c" style="left:-80px; bottom:-200px;"></div>
+  </div>
+  <div class="grain"></div>
+
+  <div class="content">
+
+    <!-- EXPERIENCE CONTINUED -->
+    <section class="section">
+      <div class="section-head">
+        <span class="num">01·b</span>
+        <h2>Experience</h2>
+        <span class="num" style="margin-left:auto;">continued</span>
+        <span class="rule"></span>
+      </div>
+
+      <div class="xp">
+
+        <article class="glass job">
+          <div class="when">
+            Aug 2020<br/>— Sep 2021<br/><span style="opacity:.7;">1 yr 2 mo</span>
+          </div>
+          <div class="body">
+            <h3>Lecturer · GeekBrains</h3>
+            <div class="meta">Contractor</div>
+            <ul>
+              <li>Conducted lectures on System Architecture, Java and the Spring Framework for online cohorts.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="glass job">
+          <div class="when">
+            Dec 2019<br/>— Nov 2020<br/><span style="opacity:.7;">1 year</span>
+          </div>
+          <div class="body">
+            <h3>Java Developer · Business Environment</h3>
+            <div class="meta">Full-time<span class="dot">·</span>Moscow</div>
+            <ul>
+              <li>Built the backend for an educational online platform with Java 8 and Play Framework.</li>
+              <li>Designed microservice architecture, ran code reviews and participated in task scheduling.</li>
+            </ul>
+            <div class="stack">Java 8 · Play · PostgreSQL · MyBatis · GraphQL · Grafana · Kibana</div>
+          </div>
+        </article>
+
+        <article class="glass job">
+          <div class="when">
+            Feb 2019<br/>— Nov 2019<br/><span style="opacity:.7;">10 mo</span>
+          </div>
+          <div class="body">
+            <h3>Junior Java Developer · E-COM</h3>
+            <div class="meta">Full-time<span class="dot">·</span>Moscow</div>
+            <ul>
+              <li>Built the backend for an enterprise document-management system for retail with Java 8 and Spring.</li>
+              <li>Developed microservice architecture for improved scalability and efficiency.</li>
+            </ul>
+            <div class="stack">Java · Spring · ElasticSearch · RabbitMQ · PostgreSQL</div>
+          </div>
+        </article>
+
+        <article class="glass job">
+          <div class="when">
+            Aug 2017<br/>— Feb 2019<br/><span style="opacity:.7;">1 yr 7 mo</span>
+          </div>
+          <div class="body">
+            <h3>Performance Test Engineer · Aplana Software</h3>
+            <div class="meta">Full-time<span class="dot">·</span>Moscow</div>
+            <ul>
+              <li>Wrote performance test scripts in C and Java for banking software with LoadRunner and JMeter.</li>
+              <li>Conducted load testing and analysis to optimise software performance.</li>
+              <li>Authored test cases and Java web-service stubs for efficient testing.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- THREE-COL FOOTER: SKILLS / EDU / LANG+CERT -->
+    <section class="section" style="margin-top: 1mm;">
+      <div class="grid" style="grid-template-columns: 1.4fr 1fr 0.95fr; gap: 4mm;">
+
+        <!-- SKILLS -->
+        <div class="glass card">
+          <h3>Skills</h3>
+          <div class="skills">
+            <div class="skill-row">
+              <div class="label">Stack</div>
+              <div class="chips">
+                <span class="chip ink">Java</span><span class="chip ink">Kotlin</span><span class="chip">Spring</span><span class="chip">JVM</span><span class="chip">Dart</span><span class="chip">Flutter</span><span class="chip">SQL</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="label">Architecture</div>
+              <div class="chips">
+                <span class="chip">DDD</span><span class="chip">Microservices</span><span class="chip">Distributed</span><span class="chip">Reactive</span><span class="chip">System Analysis</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="label">Data &amp; messaging</div>
+              <div class="chips">
+                <span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">S3</span><span class="chip">Kafka</span><span class="chip">RabbitMQ</span><span class="chip">Kinesis</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="label">Platform</div>
+              <div class="chips">
+                <span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Terraform</span><span class="chip">AWS</span><span class="chip">Heroku</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="label">Leadership</div>
+              <div class="chips">
+                <span class="chip">Team mgmt</span><span class="chip">Hiring</span><span class="chip">Tech strategy</span><span class="chip">Release mgmt</span><span class="chip">Agile</span><span class="chip">Mentoring</span>
+              </div>
+            </div>
+            <div class="skill-row">
+              <div class="label">Adjacent</div>
+              <div class="chips">
+                <span class="chip">Applied ML</span><span class="chip">LLMs</span><span class="chip">Statistics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="glass card">
+          <h3>Education</h3>
+          <div class="edu-list">
+            <div class="edu">
+              <div class="deg">PhD candidate, <em>System Analysis</em></div>
+              <div class="school">HSE University, Moscow · defense pending</div>
+              <div class="yr">2022 — 2025</div>
+            </div>
+            <div class="edu">
+              <div class="deg">MSc, <em>Business Informatics</em></div>
+              <div class="school">HSE University, Moscow</div>
+              <div class="yr">2020 — 2022</div>
+            </div>
+            <div class="edu">
+              <div class="deg">Exchange, <em>Cyber Security</em></div>
+              <div class="school">BTU Cottbus-Senftenberg, Germany</div>
+              <div class="yr">2019 — 2020</div>
+            </div>
+            <div class="edu">
+              <div class="deg">BSc, <em>Computer Science</em></div>
+              <div class="school">HSE University, Moscow</div>
+              <div class="yr">2016 — 2020</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LANG + CERT -->
+        <div style="display:flex; flex-direction:column; gap: 4mm;">
+
+          <div class="glass card">
+            <h3>Languages</h3>
+            <div class="lang-list">
+              <div class="lang"><span class="name-l">Russian</span><span class="lvl">NATIVE</span></div>
+              <div class="lang"><span class="name-l">English</span><span class="lvl">FLUENT</span></div>
+              <div class="lang"><span class="name-l">German</span><span class="lvl">ELEMENTARY</span></div>
+            </div>
+          </div>
+
+          <div class="glass card">
+            <h3>Certifications</h3>
+            <div class="cert-list">
+              <div class="cert">Reactive Architecture · Microservices</div>
+              <div class="cert">Reactive Architecture · Scalable Systems</div>
+              <div class="cert">Reactive Architecture · Distributed Messaging</div>
+              <div class="cert">Docker Mastery · K8s &amp; Swarm</div>
+              <div class="cert">Foundations of Project Management</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <div class="siglabel">the.mikhail.stepanov@gmail.com</div>
+  <div class="pagelabel">02 / 02</div>
+</section>
+
+</body>
+</html>

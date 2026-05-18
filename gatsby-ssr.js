@@ -10,9 +10,9 @@ export const onRenderBody = ({ setHeadComponents, setHtmlAttributes, setPreBodyC
     <link
       key="gf-stylesheet"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Onest:wght@300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..900&family=Onest:wght@300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
     />,
-    <meta key="theme-color" name="theme-color" content="#f4f1ea" />,
+    <meta key="theme-color" name="theme-color" content="#f4ece0" />,
     <meta key="color-scheme" name="color-scheme" content="light" />,
   ])
 

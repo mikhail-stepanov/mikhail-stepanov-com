@@ -5,26 +5,26 @@ const typography = new Typography({
   baseLineHeight: 1.65,
   scaleRatio: 2.4,
   googleFonts: [],
-  headerFontFamily: ["Onest", "system-ui", "-apple-system", "sans-serif"],
-  bodyFontFamily: ["Onest", "system-ui", "-apple-system", "sans-serif"],
+  headerFontFamily: ["Posterama", "Outfit", "Onest", "system-ui", "-apple-system", "sans-serif"],
+  bodyFontFamily: ["Posterama", "Outfit", "Onest", "system-ui", "-apple-system", "sans-serif"],
   overrideStyles: () => ({
     "html": {
-      background: "#f4f1ea",
+      background: "#f4ece0",
     },
     "body": {
       color: "#1d1d1f",
-      background: "#f4f1ea",
+      background: "#f4ece0",
     },
     "a.gatsby-resp-image-link": {
       boxShadow: "none",
     },
     "a": {
-      color: "#b08418",
+      color: "#1e33e8",
       textShadow: "none",
       backgroundImage: "none",
     },
     "h1, h2, h3, h4, h5, h6": {
-      color: "#1d1d1f",
+      color: "#1e33e8",
     },
   }),
 })
